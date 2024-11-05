@@ -1,4 +1,5 @@
-###Tutorial de como utilizar Github Google buscar
+Tutorial de como utilizar Github Google buscar
+
 ![q6zp8iezguya1](https://github.com/user-attachments/assets/e3e38701-1dfc-4c72-ad09-c106b3961e3d)
 
 ⚠️Não baixar pq não funciona
@@ -38,3 +39,5 @@ Agora, podemos calcular a porcentagem de sucesso ponderada considerando o númer
 Conclusão:
 
 A redeR, apesar de ser mais numerosa, também tem uma taxa de sucesso mais alta (60,3%), o que faz com que, no conjunto total, o sucesso ponderado do programa seja em torno de 55,2%. Isso indica que, em termos gerais, as redesR têm mais chance de sucesso do que as redesB.
+
+![grafico](https://github.com/user-attachments/assets/93e0ebdc-fe29-4fa9-8a68-10721f325056)
